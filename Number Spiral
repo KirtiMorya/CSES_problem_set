@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long 
+//constructive question analyze pattern agr col>row se and col even hai to  ans=col*col-row+1 , odd hai to col*col+row ----------  agr row>col and row is even then ans=row*row+1-col and if row is odd then ans= row*row+col
+int main(){
+    ll t;
+    cin>>t;
+    while(t--){
+        ll y,x;
+        cin>>y>>x;
+        if(x>y){
+            if(x%2==1){
+               cout<<(x*x-y+1)<<endl;
+            }
+            else{
+                 x--;
+                 cout<<(x*x+y)<<endl;
+            }
+        }
+        else{
+            if(y%2==0){
+               cout<<(y*y+1-x)<<endl;
+            }
+            else{
+                y--;
+                cout<<(y*y+x)<<endl;
+
+            }
+        }
+    }
+    return 0;
+}
