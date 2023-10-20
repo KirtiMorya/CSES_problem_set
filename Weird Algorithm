@@ -1,0 +1,24 @@
+ode
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long 
+long long mod=1e9+7;
+int main(){
+    ll n;
+    cin>>n;
+    vector<ll>vt;
+    vt.push_back(n);
+    while(n!=1){
+         if(n%2==0){
+           n=n/2;
+           vt.push_back(n);
+         }
+         else{
+            n=n*3+1;
+            vt.push_back(n);
+         }
+    }
+    for(ll i=0; i<vt.size(); i++){
+      cout<<vt[i]<<" ";
+    }
+    return 0;
