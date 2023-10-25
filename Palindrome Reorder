@@ -1,0 +1,49 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long 
+int mod=1e9+7;
+int main(){
+    string s;
+    cin>>s;
+    map<char,int>mp;
+    for(auto it:s){
+        mp[it]++;
+    }
+    int count=0;
+    int even=0;
+    for(auto it:mp){
+        if(it.second%2!=0){
+            count++;
+        }
+        else{
+            even++;
+        }
+    }
+    if(count>1){
+        cout<<"NO SOLUTION";
+        return 0;
+    }
+    string res="";
+    string r="";
+    for(auto it:mp){
+        if(it.second%2==0){
+            it.second=it.second/2;
+            while(it.second>0){
+                res+=it.first;
+                it.second--;
+            }
+        }
+        else{
+             while(it.second>0){
+                r+=it.first;
+                it.second--;
+             }
+        }
+    }
+    string a=res;
+    reverse(a.begin(),a.end());
+    res+=r;
+    res+=a;
+    cout<<res;
+    return 0;
+}
